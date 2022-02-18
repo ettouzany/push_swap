@@ -27,7 +27,7 @@ void push_inlist(t_list** one,t_list** two){
     }
 
     i= 0;
-    while (i < ((*one)->total) )
+    while (i < ((*one)->total))
     {
         one_last->total -= 1;
         one_last = one_last->next;
@@ -54,22 +54,22 @@ void push(t_list** a,t_list** b,char targget)
 
     if(targget == 'b')
         push_inlist(a,b);
-    if(targget == 'b')
+    if(targget == 'a')
         push_inlist(b,a);
     if(targget == 'p')
         targget = 0;
-        int i=0;
-        t_list* temp = *a;
-            printf("####------------\n");
+        // int i=0;
+        // t_list* temp = *a;
+        //     printf("####------------\n");
 
-        while(i < temp->total)
-        {
-            printf("val: %d ",temp->value);
-            printf("pos: %d\n",temp->pos);
-            temp = temp->next;
-            i++;
-        }
-            printf("#####------------\n");
+        // while(i < temp->total)
+        // {
+        //     printf("val: %d ",temp->value);
+        //     printf("pos: %d\n",temp->pos);
+        //     temp = temp->next;
+        //     i++;
+        // }
+        //     printf("#####------------\n");
 }
 
 void swap(t_list** to_swap)
@@ -130,7 +130,7 @@ char** push_swap(t_list* a, t_list* b, int lenght)
             printf("))------------\n");
 
         i=0;
-    while (i < lenght && lenght > 3)
+    while (i < lenght && lenght > 2)
     {
         while (i < lenght)
         {
@@ -177,7 +177,7 @@ char** push_swap(t_list* a, t_list* b, int lenght)
         // }
         //     printf("))------------\n");
 
-        // i=0;
+        i=0;
         lenght = a->total;
         div += a->total/2;
     }
@@ -196,7 +196,9 @@ char** push_swap(t_list* a, t_list* b, int lenght)
     while(i++ < temp->total)
     {
         printf("val: %d ",temp->value);
-        printf("pos: %d\n",temp->pos);
+        printf("pos: %d ",temp->pos);
+        printf("total: %d ",temp->total);
+        printf("next: %p\n",temp->next);
         temp = temp->next;
     }
     i=0;
@@ -210,4 +212,5 @@ char** push_swap(t_list* a, t_list* b, int lenght)
         printf("next: %p\n",temp->next);
         temp = temp->next;
     }
+    return output;
 }

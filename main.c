@@ -56,21 +56,6 @@ int main()
     int i = lenght;
 
     t_list* a = ft_parser(n, lenght);
-    i=0;
-        t_list* temp = a;
-            printf("))------------\n");
-
-        while(i < temp->total)
-        {   
-            printf("i is: %d | ",temp->total);
-            printf("val: %d ",temp->value);
-            printf("pos: %d\n",temp->pos);
-            temp = temp->next;
-            i++;
-        }
-            printf("))------------\n");
-
-        i=0;
     if(a)
     {
         // while(--i > -1)
