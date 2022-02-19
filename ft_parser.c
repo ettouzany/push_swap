@@ -1,5 +1,6 @@
 #include "push_swap.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 int ft_check_duplacates(int *yarbi_mankonch_m3awed, int lenght)
 {
@@ -9,8 +10,8 @@ int ft_check_duplacates(int *yarbi_mankonch_m3awed, int lenght)
     while((j = ++i,i) < lenght)
         while(j++ < lenght)
             if(yarbi_mankonch_m3awed[i] == yarbi_mankonch_m3awed[j])
-                return(0);
-    return(1);
+                return(i);
+    return(0);
 }
 
 int ft_machi_atoi(char* src, int* dst){
@@ -43,16 +44,26 @@ t_list* init_stuck(int lenght)
     temp = head;
     temp->pos = 0;
     temp->value = 0;
+    temp->div = lenght;
+    temp->group = lenght;
     temp->total = lenght;
     while (i+1 < lenght)
     {
         temp->pos = 0;
         temp->value = 0;
+        temp->div = lenght;
+        temp->group = lenght;
+
         temp->total = lenght;
         temp->next = (t_list *)malloc(sizeof(t_list));
         temp = temp->next;
         i++;
     }
+    temp->pos = 0;
+    temp->value = 0;
+    temp->div = lenght;
+    temp->group = lenght;
+    temp->total = lenght;
     temp->next = head;
     return(head);
 }
@@ -62,8 +73,7 @@ void fill_stack(t_list* head, int* list,int lenght){
     while (i < lenght)
     {
         head->value = list[i];
-        head->pos = 0;
-        head->total = lenght;
+
         j=0;
         while (j < lenght)
         {
@@ -86,16 +96,16 @@ t_list* ft_parser(char **s, int lenght)
     int* output = malloc(sizeof(int) * lenght);
     int i;
     i  = -1;
-    int ok = 1;
+    int ok = 0;
 
-    while(++i < lenght && ok)
-        ok = ft_machi_atoi(s[i], &output[i]);
+    while(++i < lenght && !ok)
+        ok = !ft_machi_atoi(s[i], &output[i]);
     
-    if(!ok)
+    if(ok)
         return(0);
     ok = ft_check_duplacates(output, lenght);
-    if(!ok)
-        return(0);
+    if(ok)
+        return(printf("dup%d\n", ok),NULL);
     fill_stack(head, output, lenght);
     return head;
 }

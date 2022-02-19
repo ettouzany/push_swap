@@ -6,6 +6,8 @@ typedef struct s_list {
     int pos;
     int value;
     int total;
+    int group;
+    int div;
 } t_list;
 
 t_list* ft_parser(char **s, int lenght);

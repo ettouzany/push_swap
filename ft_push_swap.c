@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int check_if_sorted(t_list* a,int lenght)
+int check_if_sorted(t_list* a)
 {
     int i = 0;
-    while (i < lenght )
+    while (i < a->total )
         if (a->pos != i++)
             return (0);
     return (1);
@@ -17,7 +17,6 @@ void push_inlist(t_list** one,t_list** two){
     int i = 0;
     t_list* temp = *two;
     t_list* one_last = *one;
-        printf("```total1: %d \n",(temp)->total);
 
     while (i < (temp->total) - 1)
     {
@@ -33,7 +32,6 @@ void push_inlist(t_list** one,t_list** two){
         one_last = one_last->next;
         i++;
     }
-    printf("*****last: %d \n",(one_last)->pos);
 
     one_last->total -= 1;
     one_last->next = (*one)->next;
@@ -45,7 +43,6 @@ void push_inlist(t_list** one,t_list** two){
     (*one)->total = (temp)->total; 
     *one = one_last->next;
     *two = temp->next;
-    printf("```total2: %d \n",(temp)->total);
 }
 
 void push(t_list** a,t_list** b,char targget)
@@ -101,7 +98,7 @@ char** push_swap(t_list* a, t_list* b, int lenght)
 {
     char** output;
 
-    int ok = check_if_sorted(a, lenght);
+    int ok = check_if_sorted(a);
     if(ok)
         return(NULL);
     int i = 0;
@@ -129,24 +126,25 @@ char** push_swap(t_list* a, t_list* b, int lenght)
         }
             printf("))------------\n");
 
-        i=0;
-    while (i < lenght && lenght > 2)
+    char a_or_b = 'b';
+    i=1;
+    while (1)
     {
         while (i < lenght)
         {
-            printf("--- steps: %d\n",i);
-            if(a->pos<div)
+            if(a->pos < div)
             {
-                //printf("i is : %d\n",i);
-                push(&a, &b,'b');
+                printf("--- move on : %d :: %d\n",a->pos, a->value);
+                a->group = lenght;
+                push(&a, &b, a_or_b);
             }
             else{
-                printf("+++rotation on : %d\n",a->pos);
+                printf("+++rotation on : %d :: %d\n",a->pos, a->value);
                 temp = a;
                 j=0;
                 while(j < temp->total)
                 {
-                    if(temp->pos<div)
+                    if(temp->pos < div)
                         break;
                     temp = temp->next;
                     j++;
@@ -154,50 +152,103 @@ char** push_swap(t_list* a, t_list* b, int lenght)
                 if(temp->total != j)
                 {
                     rotate(&a);
-                    printf("+++rotation to : %d\n",a->pos);
+                    printf("+++rotation to : %d :: %d\n",a->pos, a->value);
                 }
                 if(a->pos<div)
-                {
-                    push(&a, &b,'b');
-                }
-            }
+{                        printf("--- move on : %d :: %d\n",a->pos, a->value);
+
+                    push(&a, &b, a_or_b);
+}            }
             i++;
         }
-        
-        // i=0;
-        // temp = a;
-        //     printf("))------------\n");
-
-        // while(i < temp->total)
-        // {
-        //     printf("val: %d ",temp->value);
-        //     printf("pos: %d\n",temp->pos);
-        //     temp = temp->next;
-        //     i++;
-        // }
-        //     printf("))------------\n");
-
         i=0;
-        lenght = a->total;
-        div += a->total/2;
+        if(check_if_sorted(a) || a->total == 2)
+        {
+            if(!check_if_sorted(a))
+            {
+                rotate(&a);
+                push(&a, &b, 'a');
+            }
+            else
+                push(&a, &b, 'a');
+
+            if(b->total != 0)
+            {
+                a_or_b = 'a';
+            } else
+            {
+                break;
+            }
+        }
+        else
+        {
+            lenght = a->total;
+            div += a->total/2;
+        }
+        
+        printf("))))))) : %d\n",div);
     }
-    
-    // while ()
+
+
+    // i=0;
+    // lenght = b->total;
+    // div -= a->total/1.5;
+    // while (i < lenght && lenght > 2)
     // {
-    //     /* code */
+    //     printf("\t\t\t\t\t%d\n", div);
+    //     while (i < lenght)
+    //     {
+    //         if(b->pos > div)
+    //         {
+    //             printf("--- move on: %d\n", b->pos);
+    //             push(&a, &b,'a');
+    //         }
+    //         else{
+    //             printf("+++rotation on : %d\n",a->pos);
+    //             temp = b;
+    //             j=0;
+    //             while(j < temp->total)
+    //             {
+    //                 if(temp->pos > div)
+    //                     break;
+    //                 temp = temp->next;
+    //                 j++;
+    //             }
+    //             if(temp->total != j)
+    //             {
+    //                 rotate(&b);
+    //                 printf("+++rotation to : %d\n",b->pos);
+    //             }
+    //             if(a->pos<div)
+    //             {
+    //                 push(&a, &b,'a');
+    //             }
+    //         }
+    //         i++;
+    //     }
+
+    //     i=0;
+    //     lenght = b->total;
+    //     printf("########@#@total  b : %d\n",b->total);
+    //     div = (b->total/1.5);
     // }
-    
+    // if(!check_if_sorted(a))
+    // {
+    //     rotate(&a);
+    //     push(&a, &b,'a');
+    // }
 
 
-
+ 
     i=0;
 
     temp = a;
     while(i++ < temp->total)
     {
-        printf("val: %d ",temp->value);
-        printf("pos: %d ",temp->pos);
-        printf("total: %d ",temp->total);
+        printf("val: %000d\t",temp->value);
+        printf("pos: %000d\t",temp->pos);
+        printf("group: %000d\t",temp->group);
+        printf("total: %000d\t",temp->total);
         printf("next: %p\n",temp->next);
         temp = temp->next;
     }
@@ -206,10 +257,13 @@ char** push_swap(t_list* a, t_list* b, int lenght)
     temp = b;
     while(i++ < temp->total)
     {
-        printf("val: %d ",temp->value);
-        printf("pos: %d ",temp->pos);
-        printf("total: %d ",temp->total);
-        printf("next: %p\n",temp->next);
+        printf("val: %d\t",temp->value);
+        printf("pos: %d\t",temp->pos);
+                printf("group: %000d\t",temp->group);
+
+        printf("total: %d\t",temp->total);
+        printf("next: %p\t",temp->next);
+        printf("next-pos: %d\n",temp->next->pos);
         temp = temp->next;
     }
     return output;

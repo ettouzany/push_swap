@@ -1,0 +1,79 @@
+# 37
+# val: 912122	  pos: 35 sp
+# val: 4343434	pos: 36 pa pa
+# 35
+
+
+
+
+30
+val: 343    	pos: 22 rp rrp rr rrp
+val: 324	    pos: 21 rp rrp
+val: 225    	pos: 20 rp rrp
+20
+
+
+
+val: 44   	  pos: 11
+val: 43     	pos: 10
+val: 31     	pos: 9 
+val: 55     	pos: 14
+val: 4      	pos: 3 
+val: 64     	pos: 15
+val: 54     	pos: 13
+val: 12     	pos: 7 
+val: 123      pos: 18
+val: 77     	pos: 16
+val: 1      	pos: 0 
+val: 5      	pos: 4 
+val: 2      	pos: 1 
+val: 222      pos: 19
+val: 45     	pos: 12
+val: 6      	pos: 5 
+val: 11     	pos: 6 
+val: 121      pos: 17
+val: 13     	pos: 8 
+val: 3      	pos: 2
+
+
+val: 34543543	pos: 39	total: 2	next: 0x7f897c402e50
+val: 23423423	pos: 38	total: 2	next: 0x7f897c402df0
+pos------------
+val: 19912122	pos: 37	total: 38	next: 0x7f897c402fb0	next-pos: 35
+val: 912122	pos: 35	total: 38	next: 0x7f897c402e70	next-pos: 36
+val: 4343434	pos: 36	total: 38	next: 0x7f897c4030f0	next-pos: 31
+val: 43434	pos: 31	total: 38	next: 0x7f897c4030d0	next-pos: 32
+val: 423423	pos: 32	total: 38	next: 0x7f897c403070	next-pos: 34
+val: 543543	pos: 34	total: 38	next: 0x7f897c402f10	next-pos: 33
+val: 433442	pos: 33	total: 38	next: 0x7f897c402ef0	next-pos: 30
+val: 24324	pos: 30	total: 38	next: 0x7f897c403110	next-pos: 20
+val: 225	pos: 20	total: 38	next: 0x7f897c402ed0	next-pos: 26
+val: 2444	pos: 26	total: 38	next: 0x7f897c402eb0	next-pos: 22
+val: 343	pos: 22	total: 38	next: 0x7f897c402e30	next-pos: 25
+val: 1331	pos: 25	total: 38	next: 0x7f897c402e10	next-pos: 28
+val: 3455	pos: 28	total: 38	next: 0x7f897c402b50	next-pos: 24
+val: 534	pos: 24	total: 38	next: 0x7f897c402b30	next-pos: 23
+val: 435	pos: 23	total: 38	next: 0x7f897c402b10	next-pos: 29
+val: 4554	pos: 29	total: 38	next: 0x7f897c403190	next-pos: 27
+val: 3442	pos: 27	total: 38	next: 0x7f897c403170	next-pos: 21
+val: 324	pos: 21	total: 38	next: 0x7f897c403150	next-pos: 11
+val: 44	pos: 11	total: 38	next: 0x7f897c403130	next-pos: 10
+val: 43	pos: 10	total: 38	next: 0x7f897c4030b0	next-pos: 9
+val: 31	pos: 9	total: 38	next: 0x7f897c403090	next-pos: 14
+val: 55	pos: 14	total: 38	next: 0x7f897c403050	next-pos: 3
+val: 4	pos: 3	total: 38	next: 0x7f897c403030	next-pos: 15
+val: 64	pos: 15	total: 38	next: 0x7f897c403010	next-pos: 13
+val: 54	pos: 13	total: 38	next: 0x7f897c402ff0	next-pos: 7
+val: 12	pos: 7	total: 38	next: 0x7f897c402fd0	next-pos: 18
+val: 123	pos: 18	total: 38	next: 0x7f897c402f90	next-pos: 16
+val: 77	pos: 16	total: 38	next: 0x7f897c402f70	next-pos: 0
+val: 1	pos: 0	total: 38	next: 0x7f897c402f50	next-pos: 4
+val: 5	pos: 4	total: 38	next: 0x7f897c402f30	next-pos: 1
+val: 2	pos: 1	total: 38	next: 0x7f897c402e90	next-pos: 19
+val: 222	pos: 19	total: 38	next: 0x7f897c402af0	next-pos: 12
+val: 45	pos: 12	total: 38	next: 0x7f897c402ad0	next-pos: 5
+val: 6	pos: 5	total: 38	next: 0x7f897c402a90	next-pos: 6
+val: 11	pos: 6	total: 38	next: 0x7f897c402a70	next-pos: 17
+val: 121	pos: 17	total: 38	next: 0x7f897c400690	next-pos: 8
+val: 13	pos: 8	total: 38	next: 0x7f897c400640	next-pos: 2
+val: 3	pos: 2	total: 38	next: 0x7f897c402ab0	next-pos: 37

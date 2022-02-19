@@ -1,0 +1,27 @@
+
+
+23
+val: 534    	pos: 24 rp rrp pa
+val: 435    	pos: 23 rp rrp pa
+25
+val: 1331   	pos: 25 pa
+val: 4554   	pos: 29 pa
+val: 3442	    pos: 27 pa
+val: 3455   	pos: 28 pa
+val: 2444   	pos: 26 pa
+30
+val: 24324  	pos: 30 pa
+val: 43434	  pos: 31 rrp rrp sp pa
+val: 423423	  pos: 32 pa
+33
+val: 433442 	pos: 33 pa
+val: 543543	  pos: 34 rr rr pa
+35
+# val: 912122	  pos: 35 sp
+# val: 4343434	pos: 36 pa pa
+37
+val: 19912122 	pos: 37
+38
+val: 23423423 	pos: 38
+val: 34543543 	pos: 39
+40

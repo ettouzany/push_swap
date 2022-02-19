@@ -3,14 +3,16 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: gcc.exe build active file",
-			"command": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+			"label": "C/C++: clang build active file",
+			"command": "/usr/bin/clang",
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
 				"${file}",
+				"ft_push_swap.c",
+				"ft_parser.c",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}/${fileBasenameNoExtension}"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
@@ -19,7 +21,7 @@
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "compiler: \"C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe\""
+			"detail": "compiler: /usr/bin/clang"
 		}
 	]
 }
